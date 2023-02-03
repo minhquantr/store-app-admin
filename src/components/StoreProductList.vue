@@ -160,9 +160,9 @@ export default {
       });
 
       const response = await fetch(
-        `${this.$apiHost}/stores/${storeId}?sortBy=${sortBy}&${filterBy.join(
-          "&"
-        )}`
+        `${
+          this.$apiHost
+        }/stores/${storeId}/products?sortBy=${sortBy}&${filterBy.join("&")}`
       );
       const json = await response.json();
       this.storeProducts = json?.data;
