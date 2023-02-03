@@ -8,7 +8,7 @@ const app = createApp(App);
 
 app.config.unwrapInjectedRef = true;
 
-app.config.globalProperties.$apiHost = "http://localhost:3000";
+app.config.globalProperties.$apiHost = "https://store-app-api.onrender.com";
 
 // breakpoints
 app.config.globalProperties.$bps = {
