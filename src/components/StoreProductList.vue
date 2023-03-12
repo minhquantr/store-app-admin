@@ -150,23 +150,28 @@ export default {
   },
   methods: {
     async fetchStoreProducts() {
-      const storeId = this.selectedStore?.id;
-      if (!storeId) return;
-      this.isFetching = true;
-
-      const sortBy = this.selectedSortOption;
-      const filterBy = this.selectedFilterOptions.map((option) => {
-        return `filterBy[]=${encodeURIComponent(option)}`;
-      });
-
       const response = await fetch(
-        `${
-          this.$apiHost
-        }/stores/${storeId}/products?sortBy=${sortBy}&${filterBy.join("&")}`
+        `https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyD0viVz0QKg0ZdxbFMKj5gYKhmbjCKIrq0`
       );
       const json = await response.json();
-      this.storeProducts = json?.data;
-      this.isFetching = false;
+      console.log(json);
+      // const storeId = this.selectedStore?.id;
+      // if (!storeId) return;
+      // this.isFetching = true;
+
+      // const sortBy = this.selectedSortOption;
+      // const filterBy = this.selectedFilterOptions.map((option) => {
+      //   return `filterBy[]=${encodeURIComponent(option)}`;
+      // });
+
+      // const response = await fetch(
+      //   `${
+      //     this.$apiHost
+      //   }/stores/${storeId}/products?sortBy=${sortBy}&${filterBy.join("&")}`
+      // );
+      // const json = await response.json();
+      // this.storeProducts = json?.data;
+      // this.isFetching = false;
     },
     selectSortOptionHandler(event) {
       if (event) {

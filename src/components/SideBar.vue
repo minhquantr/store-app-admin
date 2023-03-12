@@ -169,6 +169,7 @@ export default {
   },
   methods: {
     async fetchStores() {
+      return;
       const response = await fetch(`${this.$apiHost}/stores`);
       const json = await response.json();
       this.stores = json?.data;
